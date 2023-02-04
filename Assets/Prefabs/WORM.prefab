@@ -101,7 +101,7 @@ MonoBehaviour:
   parentTile: {fileID: 0}
   wormDeathParticle: {fileID: 351085150267822881}
   spriteRenderer: {fileID: 7382523504873515150}
-  hitSprite: {fileID: 0}
+  hitSprite: {fileID: 21300000, guid: dc8c24bd5f78fd4469a5695833ce139e, type: 3}
 --- !u!1001 &351085150249927045
 PrefabInstance:
   m_ObjectHideFlags: 0

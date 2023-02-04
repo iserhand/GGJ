@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 namespace GGJ {
     public class Tile : MonoBehaviour
@@ -7,7 +8,9 @@ namespace GGJ {
         [SerializeField] private SpriteRenderer _renderer;
         public int childObstacleType;
         public Obstacle childObstacle;
-
+        public List<Tile> neighbourTiles=new List<Tile>();
+        public SpriteRenderer linesRenderer;
+        public Color lineMoveableColor,lineCannotMoveColor;
         void Init(bool isOffSet)
         {
             _renderer.color = isOffSet ? _offsetColor : _baseColor;
@@ -27,6 +30,21 @@ namespace GGJ {
         public void DestroyEffect()
         {
             childObstacle.DoEffect();
+        }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if(collision.CompareTag("Tile"))
+            neighbourTiles.Add(collision.GetComponent<Tile>());
+        }
+
+        public void ResetPrint()
+        {
+            linesRenderer.color = lineCannotMoveColor;
+        }
+        public void PrintToMoveable()
+        {
+            linesRenderer.color = lineMoveableColor;
+
         }
 
     }

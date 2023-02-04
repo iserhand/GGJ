@@ -11,6 +11,7 @@ namespace GGJ
         public RootAnimation rootAnimationSc;
         public Tile currentTile;
         public bool isGamePlayable=true;
+        public List<Tile> printedTiles = new List<Tile>();
         private void Awake()
         {
             MakeSingleton();
@@ -48,6 +49,19 @@ namespace GGJ
             if(targetMineralCount==0)
             {
                 FindObjectOfType<Door>().OpenDoor();
+            }
+        }
+        public void UpdateMoveableGrids()
+        {
+            for(int i =0;i<printedTiles.Count;i++)
+            {
+                printedTiles[i].ResetPrint();
+            }
+            printedTiles.Clear();
+            for(int i =0;i<currentTile.neighbourTiles.Count;i++)
+            {
+                currentTile.neighbourTiles[i].PrintToMoveable();
+                printedTiles.Add(currentTile.neighbourTiles[i]);
             }
         }
         public void LoseGame()

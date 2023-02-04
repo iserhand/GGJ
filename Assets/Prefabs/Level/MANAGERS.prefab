@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &815193911748966816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 815193911748966817}
+  - component: {fileID: 815193911748966818}
+  - component: {fileID: 815193911748966819}
+  - component: {fileID: 815193911748966812}
+  m_Layer: 0
+  m_Name: MANAGERS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &815193911748966817
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815193911748966816}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &815193911748966818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815193911748966816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad6716993b702543b2e1c9e2db566c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnCount: 12
+  targetMineralCount: 0
+  rootAnimationSc: {fileID: 0}
+  currentTile: {fileID: 0}
+  isGamePlayable: 1
+  printedTiles: []
+--- !u!114 &815193911748966819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815193911748966816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 083b0be7a8ce0724da5f401ccbb70435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tourCountText: {fileID: 0}
+  requiredMineralText: {fileID: 0}
+  restartGO: {fileID: 0}
+  winGO: {fileID: 0}
+--- !u!114 &815193911748966812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815193911748966816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd3ba400d088a4d42a31681f4ebf07e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  obstacleTypeArray: 0000000000000000020000000200000002000000000000000100000003000000000000000000000003000000000000000000000001000000060000000000000004000000000000000400000005000000000000000000000000000000050000000000000001000000000000000000000000000000000000000500000000000000000000000000000000000000
+  waterPrefab: {fileID: 1335330535038592247, guid: 4b320ac323e720549b11e333589423de, type: 3}
+  rockPrefab: {fileID: 6722729463475404167, guid: 7b0336a1d430a1c43a138a1b1176fe0e, type: 3}
+  mineralPrefab: {fileID: 7096149831311243484, guid: b5d64c688d3383a4a9faefe109406504, type: 3}
+  wormPrefab: {fileID: 7382523504873515149, guid: 3a197f5bc4c751f4fa3b361f704da11f, type: 3}
+  bottlePrefab: {fileID: 379492518862813996, guid: 4ffad9313d29d084c96e750d54023c53, type: 3}
+  doorPrefab: {fileID: 4253261991284932378, guid: 128d4db435a9f6b489f061d7b6ff978a, type: 3}

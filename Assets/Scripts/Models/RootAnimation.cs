@@ -14,6 +14,7 @@ namespace GGJ
         private float prevx = 0;
         private float prevy = 0;
         public bool drawing = false;
+        public Tile startTile;
         void Start()
         {
             StartCoroutine(DrawRoot(0.1f, 2.92f));
@@ -36,6 +37,8 @@ namespace GGJ
         {
             if (!firstTime)
                 GameManager.Instance.ChangeTurnCount(-1);
+            else
+                GameManager.Instance.currentTile = startTile;
             drawing = true;
             audioSource.PlayOneShot(audioSource.clip, 1.0f);
             float growthFactorx = (targetX - fromx) / vertexCount;
@@ -91,6 +94,7 @@ namespace GGJ
             drawing = false;
 
             firstTime = false;
+            GameManager.Instance.UpdateMoveableGrids();
             yield return null;
         }
 

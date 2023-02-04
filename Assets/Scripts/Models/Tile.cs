@@ -2,7 +2,7 @@ using UnityEngine;
 namespace GGJ {
     public class Tile : MonoBehaviour
     {
-
+        // su 1, kaya 2, mineral 3, pet 4, jumper 5
         [SerializeField] private Color _baseColor, _offsetColor;
         [SerializeField] private SpriteRenderer _renderer;
         public int childObstacleType;
@@ -15,7 +15,7 @@ namespace GGJ {
         }
         void OnMouseDown()
         {
-            if (GameManager.Instance.rootAnimationSc.drawing)
+            if (GameManager.Instance.rootAnimationSc.drawing || childObstacleType==2)
             {
                 return;
             }

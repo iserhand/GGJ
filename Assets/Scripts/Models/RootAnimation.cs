@@ -37,7 +37,6 @@ namespace GGJ
             if (!firstTime)
                 GameManager.Instance.turnCount--;
             drawing = true;
-            UIManager.Instance.UpdateTourCountText();
             audioSource.PlayOneShot(audioSource.clip, 1.0f);
             float growthFactorx = (targetX - fromx) / vertexCount;
             float growthFactory = (targetY - fromy) / vertexCount;
@@ -49,9 +48,18 @@ namespace GGJ
                 position.x += growthFactorx;
                 position.y += growthFactory;
                 rootRenderer.positionCount++;
-                newPosition = new Vector3(position.x + Random.Range(-0.05f, 0.05f), position.y + Random.Range(-0.05f, 0.05f));
-                position = Vector3.Lerp(position, newPosition, i);
-                rootRenderer.SetPosition(rootRenderer.positionCount - 1, position);
+                if (Mathf.Abs(growthFactorx) > Mathf.Abs(growthFactory))
+                {
+                    newPosition = new Vector3(position.x, position.y + Random.Range(-0.05f, 0.05f));
+                    position = Vector3.Lerp(position, newPosition, i);
+                    rootRenderer.SetPosition(rootRenderer.positionCount - 1, position);
+                }
+                else
+                {
+                    newPosition = new Vector3(position.x + Random.Range(-0.05f, 0.05f), position.y);
+                    position = Vector3.Lerp(position, newPosition, i);
+                    rootRenderer.SetPosition(rootRenderer.positionCount - 1, position);
+                }
             }
             if (!firstTime  && CheckIsThereObstacle())
             {
@@ -63,9 +71,18 @@ namespace GGJ
                 position.x += growthFactorx;
                 position.y += growthFactory;
                 rootRenderer.positionCount++;
-                newPosition = new Vector3(position.x + Random.Range(-0.05f, 0.05f), position.y + Random.Range(-0.05f, 0.05f));
-                position = Vector3.Lerp(position, newPosition, i);
-                rootRenderer.SetPosition(rootRenderer.positionCount - 1, position);
+                if (Mathf.Abs(growthFactorx) > Mathf.Abs(growthFactory))
+                {
+                    newPosition = new Vector3(position.x, position.y + Random.Range(-0.05f, 0.05f));
+                    position = Vector3.Lerp(position, newPosition, i);
+                    rootRenderer.SetPosition(rootRenderer.positionCount - 1, position);
+                }
+                else
+                {
+                    newPosition = new Vector3(position.x + Random.Range(-0.05f, 0.05f), position.y);
+                    position = Vector3.Lerp(position, newPosition, i);
+                    rootRenderer.SetPosition(rootRenderer.positionCount - 1, position);
+                }
             }
             prevx = fromx;
             prevy = fromy;
@@ -111,13 +128,7 @@ namespace GGJ
         private void DoObstacleEffect()
         {
             Tile tileCs = GameManager.Instance.currentTile;
-            switch (tileCs.childObstacleType)
-            {
-                case 1:
-                    tileCs.DestroyEffect();
-                    break;
-
-            }
+            tileCs.DestroyEffect();
         }
     }
 }

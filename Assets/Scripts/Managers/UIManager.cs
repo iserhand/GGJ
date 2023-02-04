@@ -8,6 +8,7 @@ namespace GGJ
     {
         public static UIManager Instance;
         public TextMeshProUGUI tourCountText;
+        public TextMeshProUGUI requiredMineralText;
 
         private void Awake()
         {
@@ -28,6 +29,10 @@ namespace GGJ
         public void UpdateTourCountText()
         {
             tourCountText.text = "Turn Count:" + GameManager.Instance.turnCount.ToString();
+        }
+        public void UpdateRequiredMineralText()
+        {
+            requiredMineralText.text = "x" + GameManager.Instance.targetMineralCount;
         }
     }
 }

@@ -8,6 +8,8 @@ namespace GGJ
         public Tile[] tiles;
         public int[] obstacleTypeArray;
         public GameObject waterPrefab;
+        public GameObject rockPrefab;
+        public GameObject mineralPrefab;
         // Start is called before the first frame update
         void Start()
         {
@@ -20,6 +22,20 @@ namespace GGJ
                             GameObject waterGO = Instantiate(waterPrefab, tiles[i].transform);
                             tiles[i].childObstacleType = obstacleTypeArray[i];
                             tiles[i].childObstacle = waterGO.GetComponent<Obstacle>();
+                        }
+                        break;
+                    case 2:
+                        {
+                            GameObject rockGO = Instantiate(rockPrefab, tiles[i].transform);
+                            tiles[i].childObstacleType = obstacleTypeArray[i];
+                            tiles[i].childObstacle = rockGO.GetComponent<Obstacle>();
+                        }
+                        break;
+                    case 3:
+                        {
+                            GameObject mineralGO = Instantiate(mineralPrefab, tiles[i].transform);
+                            tiles[i].childObstacleType = obstacleTypeArray[i];
+                            tiles[i].childObstacle = mineralGO.GetComponent<Obstacle>();
                         }
                         break;
                 }

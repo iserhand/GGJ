@@ -14,11 +14,14 @@ public class CameraScaler : MonoBehaviour
 
     void Update()
     {
-        float unitsPerPixel = sceneWidth / Screen.width;
+        if (Screen.width < Screen.height)
+        {
+            float unitsPerPixel = sceneWidth / Screen.width;
 
-        float desiredHalfHeight = 0.5f * unitsPerPixel * Screen.height;
+            float desiredHalfHeight = 0.5f * unitsPerPixel * Screen.height;
 
-        _camera.orthographicSize = desiredHalfHeight;
+            _camera.orthographicSize = desiredHalfHeight;
+        }
     }
 
 }

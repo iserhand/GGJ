@@ -9,6 +9,7 @@ namespace GGJ
         public static UIManager Instance;
         public TextMeshProUGUI tourCountText;
         public TextMeshProUGUI requiredMineralText;
+        public TextMeshProUGUI totalBottleText;
         public GameObject restartGO;
         public GameObject winGO;
         private void Awake()
@@ -34,6 +35,10 @@ namespace GGJ
         public void UpdateRequiredMineralText()
         {
             requiredMineralText.text = "x" + GameManager.Instance.targetMineralCount;
+        }
+        public void UpdateTotalBottleText()
+        {
+            totalBottleText.text = "x" + (GameManager.Instance.totalCollectedBottle+GameManager.Instance.thisLevelCollectedBottle);
         }
         public void OpenRestartUI()
         {

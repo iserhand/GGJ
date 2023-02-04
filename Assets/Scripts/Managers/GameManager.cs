@@ -12,9 +12,12 @@ namespace GGJ
         public Tile currentTile;
         public bool isGamePlayable=true;
         public List<Tile> printedTiles = new List<Tile>();
+        public int totalCollectedBottle,thisLevelCollectedBottle;
         private void Awake()
         {
             MakeSingleton();
+            totalCollectedBottle = PlayerPrefs.GetInt("bottle", 0);
+           
         }
 
         private void MakeSingleton()
@@ -30,6 +33,7 @@ namespace GGJ
         }
         private void Start()
         {
+            UIManager.Instance.UpdateTotalBottleText();
             UIManager.Instance.UpdateTourCountText();
             
         }
@@ -58,10 +62,13 @@ namespace GGJ
                 printedTiles[i].ResetPrint();
             }
             printedTiles.Clear();
-            for(int i =0;i<currentTile.neighbourTiles.Count;i++)
+            for (int i = 0; i < currentTile.neighbourTiles.Count; i++)
             {
-                currentTile.neighbourTiles[i].PrintToMoveable();
-                printedTiles.Add(currentTile.neighbourTiles[i]);
+                if (currentTile.neighbourTiles[i].childObstacleType != 2)
+                {
+                    currentTile.neighbourTiles[i].PrintToMoveable();
+                    printedTiles.Add(currentTile.neighbourTiles[i]);
+                }
             }
         }
         public void LoseGame()

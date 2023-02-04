@@ -33,6 +33,8 @@ namespace GGJ
             GameManager.Instance.ChangeTurnCount(decreaseTurnWhenCollected);
             parentTile.childObstacle = null;
             parentTile.childObstacleType=0;
+            GameManager.Instance.thisLevelCollectedBottle++;
+            UIManager.Instance.UpdateTotalBottleText();
         }
     }
 }

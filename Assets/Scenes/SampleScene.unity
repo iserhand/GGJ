@@ -213,6 +213,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &793298589 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 793298589, guid: a3e8f1164755d0945bee52065c828713, type: 3}
+  m_PrefabInstance: {fileID: 7972225601573761114}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &802248720 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7972225600931063882, guid: a3e8f1164755d0945bee52065c828713, type: 3}
@@ -892,6 +903,10 @@ PrefabInstance:
       propertyPath: tourCountText
       value: 
       objectReference: {fileID: 831456527}
+    - target: {fileID: 815193911748966819, guid: 7a93fdcc228e6f546b4c10c8c0b06cdf, type: 3}
+      propertyPath: totalBottleText
+      value: 
+      objectReference: {fileID: 793298589}
     - target: {fileID: 815193911748966819, guid: 7a93fdcc228e6f546b4c10c8c0b06cdf, type: 3}
       propertyPath: requiredMineralText
       value: 

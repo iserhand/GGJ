@@ -8,6 +8,7 @@ namespace GGJ
         public Tile parentTile;
         public ParticleSystem wormDeathParticle;
         public SpriteRenderer spriteRenderer;
+        public Sprite hitSprite;
         // Start is called before the first frame update
         void Start()
         {
@@ -21,9 +22,8 @@ namespace GGJ
         }
         public override void DoEffect()
         {
-            spriteRenderer.enabled = false;
             wormDeathParticle.Play();
-            GetComponent<Animator>().enabled = false;
+            spriteRenderer.sprite = hitSprite;
             GameManager.Instance.LoseGame();
             parentTile.childObstacle = null;
             parentTile.childObstacleType=0;

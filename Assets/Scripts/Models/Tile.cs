@@ -15,7 +15,7 @@ namespace GGJ {
         }
         void OnMouseDown()
         {
-            if (GameManager.Instance.rootAnimationSc.drawing || childObstacleType==2)
+            if (GameManager.Instance.rootAnimationSc.drawing || childObstacleType==2 || !GameManager.Instance.isGamePlayable)
             {
                 return;
             }

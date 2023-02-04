@@ -80,6 +80,13 @@
     <Compile Include="Assets\Scripts\CameraScaler.cs" />
     <Compile Include="Assets\Scripts\Models\Mineral.cs" />
     <Compile Include="Assets\Scripts\Models\Worm.cs" />
+    <Compile Include="Assets\Scripts\UI\RestartButton.cs" />
+    <Compile Include="Assets\Scripts\Models\Bottle.cs" />
+    <Compile Include="Assets\Scripts\UI\StartButton.cs" />
+    <Compile Include="Assets\Scripts\UI\ResetButton.cs" />
+    <Compile Include="Assets\Scripts\UI\ExitButton.cs" />
+    <Compile Include="Assets\Scripts\Models\Door.cs" />
+    <Compile Include="Assets\Scripts\UI\NextButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

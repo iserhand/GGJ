@@ -9,7 +9,8 @@ namespace GGJ
         public static UIManager Instance;
         public TextMeshProUGUI tourCountText;
         public TextMeshProUGUI requiredMineralText;
-
+        public GameObject restartGO;
+        public GameObject winGO;
         private void Awake()
         {
             MakeSingleton();
@@ -33,6 +34,24 @@ namespace GGJ
         public void UpdateRequiredMineralText()
         {
             requiredMineralText.text = "x" + GameManager.Instance.targetMineralCount;
+        }
+        public void OpenRestartUI()
+        {
+            StartCoroutine(RestartUI());
+        }
+        public void OpenWinUI()
+        {
+            StartCoroutine(WinUI());
+        }
+        private IEnumerator RestartUI()
+        {
+            yield return new WaitForSeconds(1.5f);
+            restartGO.SetActive(true);
+        }
+        private IEnumerator WinUI()
+        {
+            yield return new WaitForSeconds(1.5f);
+            winGO.SetActive(true);
         }
     }
 }

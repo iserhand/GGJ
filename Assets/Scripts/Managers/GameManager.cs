@@ -10,6 +10,7 @@ namespace GGJ
         public int targetMineralCount = 12;
         public RootAnimation rootAnimationSc;
         public Tile currentTile;
+        public bool isGamePlayable=true;
         private void Awake()
         {
             MakeSingleton();
@@ -29,7 +30,7 @@ namespace GGJ
         private void Start()
         {
             UIManager.Instance.UpdateTourCountText();
-            UIManager.Instance.UpdateRequiredMineralText();
+            
         }
         public void ChangeTurnCount(int amount)
         {
@@ -37,7 +38,7 @@ namespace GGJ
             UIManager.Instance.UpdateTourCountText();
             if(turnCount==0)
             {
-                //TODO
+                LoseGame();
             }
         }
         public void DecreaseRequiredMineralCount()
@@ -46,12 +47,18 @@ namespace GGJ
             UIManager.Instance.UpdateRequiredMineralText();
             if(targetMineralCount==0)
             {
-                //TODO
+                FindObjectOfType<Door>().OpenDoor();
             }
         }
         public void LoseGame()
         {
-
+            UIManager.Instance.OpenRestartUI();
+            isGamePlayable = false;
+        }
+        public void WinGame()
+        {
+            UIManager.Instance.OpenWinUI();
+            isGamePlayable = false;
         }
     }
 }

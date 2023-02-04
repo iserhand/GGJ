@@ -35,7 +35,7 @@ namespace GGJ
         IEnumerator DrawRoot(float targetX, float targetY)
         {
             if (!firstTime)
-                GameManager.Instance.turnCount--;
+                GameManager.Instance.ChangeTurnCount(-1);
             drawing = true;
             audioSource.PlayOneShot(audioSource.clip, 1.0f);
             float growthFactorx = (targetX - fromx) / vertexCount;

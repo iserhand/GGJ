@@ -35,9 +35,8 @@ namespace GGJ
         }
         IEnumerator DrawRoot(float targetX, float targetY)
         {
-            if (!firstTime)
-                GameManager.Instance.ChangeTurnCount(-1);
-            else
+            
+            if(firstTime)
                 GameManager.Instance.currentTile = startTile;
             drawing = true;
             audioSource.PlayOneShot(audioSource.clip, 1.0f);
@@ -95,6 +94,8 @@ namespace GGJ
 
             firstTime = false;
             GameManager.Instance.UpdateMoveableGrids();
+            if (!firstTime)
+                GameManager.Instance.ChangeTurnCount(-1);
             yield return null;
         }
 

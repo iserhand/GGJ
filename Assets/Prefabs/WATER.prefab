@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 236a853e49e50c449ad76ee2859d21bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseTurnWhenCollected: 1
+  increaseTurnWhenCollected: 2
   parentTile: {fileID: 0}
   waterCollectParticle: {fileID: 1266486069163516521}
   spriteRenderer: {fileID: 1335330535038592244}

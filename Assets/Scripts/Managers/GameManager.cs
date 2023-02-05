@@ -41,7 +41,7 @@ namespace GGJ
         {
             turnCount += amount;
             UIManager.Instance.UpdateTourCountText();
-            if(turnCount==0)
+            if(turnCount<=0)
             {
                 LoseGame();
             }

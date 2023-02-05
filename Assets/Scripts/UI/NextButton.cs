@@ -14,7 +14,7 @@ namespace GGJ {
         public void NextGame()
         {
             PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level", 1) + 1);
-            if (PlayerPrefs.GetInt("level") >= SceneManager.sceneCount)
+            if (PlayerPrefs.GetInt("level") <= SceneManager.sceneCount)
             {
                 PlayerPrefs.SetInt("level", 1);
             }
